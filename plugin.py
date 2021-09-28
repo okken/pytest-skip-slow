@@ -1,4 +1,3 @@
-#START: top
 """
 A pytest plugin to skip `@pytest.mark.slow` tests by default. 
 Include the slow tests with `--slow`.
@@ -7,8 +6,6 @@ Include the slow tests with `--slow`.
 __version__ = '0.0.2'
 
 import pytest
-# ... the rest of our plugin code ...
-#END: top
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "slow: mark test as slow to run")

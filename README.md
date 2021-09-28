@@ -1,4 +1,4 @@
-# pytest-slow
+# pytest-skip-slow
 
 A pytest plugin to skip `@pytest.mark.slow` tests by default. 
 Include the slow tests with `--slow`.
@@ -6,7 +6,7 @@ Include the slow tests with `--slow`.
 ## Installation
 
 ```
-$ pip install pytest-slow
+$ pip install pytest-skip-slow
 ```
 
 ## Usage

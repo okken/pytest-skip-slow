@@ -37,7 +37,7 @@ test_slow.py::test_slow SKIPPED (need --slow option to run)      [100%]
 ===================== 1 passed, 1 skipped in 0.00s =====================
 ```
 
-Include the slow tests with `--slow`.
+Include the slow tests with `--slow`:
 
 
 ```shell
@@ -49,4 +49,15 @@ test_slow.py::test_normal PASSED                                 [ 50%]
 test_slow.py::test_slow PASSED                                   [100%]
 
 ========================== 2 passed in 0.00s ===========================
+```
+
+Run only the slow tests with `-m slow --slow`: 
+```shell
+(venv) $ pytest -v -m slow --slow test_slow.py 
+========================= test session starts ==========================
+collected 2 items / 1 deselected / 1 selected                          
+
+test_slow.py::test_slow PASSED                                   [100%]
+
+=================== 1 passed, 1 deselected in 0.00s ====================
 ```

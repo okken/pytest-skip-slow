@@ -1,7 +1,7 @@
 # pytest-skip-slow
 
-A pytest plugin to skip `@pytest.mark.slow` tests by default. 
-Include the slow tests with `--slow`.
+A pytest plugin to skip tests marked as `@pytest.mark.slow` or `@pytest.mark.hugemem` by default. 
+Include the slow tests with `--slow/--run-slow`, or memory-intensive tests with `--hugemem/--run-hugemem`.
 
 ## Installation
 

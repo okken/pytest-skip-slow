@@ -1,27 +1,22 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
+requires = ["flit_core >=3.11,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
 name = "pytest-skip-slow"
 authors = [{name = "Brian Okken", email = "brian+pypi@pythontest.com"}]
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 classifiers = [
-    "License :: OSI Approved :: MIT License",
-    "Framework :: Pytest"
+    "Framework :: Pytest",
 ]
 dynamic = ["version", "description"]
 dependencies = ["pytest>=6.2.0"]
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 
 [project.urls]
 Home = "https://github.com/okken/pytest-skip-slow"
 
 [project.entry-points.pytest11]
 skip_slow = "pytest_skip_slow"
-
-[project.optional-dependencies]
-test = ["tox"]
-
-[tool.flit.module]
-name = "pytest_skip_slow"

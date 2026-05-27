@@ -22,8 +22,21 @@ def test_run_slow(pytester, examples):
     result.assert_outcomes(passed=2)
 
 
+def test_run_slow_alt(pytester, examples):
+    result = pytester.runpytest("--run-slow")
+    result.assert_outcomes(passed=2)
+
+
 def test_run_only_slow(pytester, examples):
     result = pytester.runpytest("-v", "-m", "slow", "--slow")
+    result.stdout.fnmatch_lines(["*test_slow PASSED*"])
+    outcomes = result.parseoutcomes()
+    assert outcomes["passed"] == 1
+    assert outcomes["deselected"] == 1
+
+
+def test_run_only_slow_alt(pytester, examples):
+    result = pytester.runpytest("-v", "-m", "slow", "--run-slow")
     result.stdout.fnmatch_lines(["*test_slow PASSED*"])
     outcomes = result.parseoutcomes()
     assert outcomes["passed"] == 1

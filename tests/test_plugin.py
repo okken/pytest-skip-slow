@@ -32,4 +32,4 @@ def test_run_only_slow(pytester, examples):
 
 def test_help(pytester):
     result = pytester.runpytest("--help")
-    result.stdout.fnmatch_lines(["*--slow * include tests marked slow*"])
+    result.stdout.fnmatch_lines(["*--slow, --run-slow * include tests marked slow*"])

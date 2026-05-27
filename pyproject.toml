@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "pytest-skip-slow"
-authors = [{name = "Brian Okken", email = "brian+pypi@pythontest.com"}]
+authors = [{name = "Brian Okken"}]
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]

@@ -6,7 +6,7 @@ Include the slow tests with `--slow`.
 import pytest
 
 
-__version__ = "0.0.5"
+__version__ = "1.0"
 
 
 def pytest_configure(config):

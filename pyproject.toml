@@ -20,8 +20,5 @@ Home = "https://github.com/okken/pytest-skip-slow"
 [project.entry-points.pytest11]
 skip_slow = "pytest_skip_slow"
 
-[project.optional-dependencies]
-test = ["tox"]
-
 [tool.flit.module]
 name = "pytest_skip_slow"

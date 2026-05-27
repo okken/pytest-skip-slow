@@ -14,9 +14,13 @@ def pytest_configure(config):
 
 
 def pytest_addoption(parser):
-    parser.addoption("--slow", action="store_true",
-                     help="include tests marked slow")
-
+    parser.addoption(
+        "--slow",
+        "--run-slow",
+        dest="slow",
+        action="store_true",
+        help="include tests marked slow",
+    )
 
 def pytest_collection_modifyitems(config, items):
     if not config.getoption("--slow"):

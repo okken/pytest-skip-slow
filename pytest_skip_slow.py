@@ -11,6 +11,7 @@ __version__ = "1.0"
 
 def pytest_configure(config):
     config.addinivalue_line("markers", "slow: mark test as slow to run")
+    config.addinivalue_line("markers", "hugemem: mark test as memory intensive")
 
 
 def pytest_addoption(parser):
@@ -21,11 +22,20 @@ def pytest_addoption(parser):
         action="store_true",
         help="include tests marked slow",
     )
+    parser.addoption(
+        "--hugemem",
+        "--run-hugemem",
+        action="store_true",
+        help="include tests marked memory intensive",
+    )
 
 def pytest_collection_modifyitems(config, items):
-    run_slow = config.getoption("--slow")
-    skip_slow = pytest.mark.skip(reason="need --slow option to run")
+    if not config.getoption("--slow"):
+        skipper = pytest.mark.skip(reason="need --slow option to run")
+        for item in filter(lambda it: "slow" in it.keywords, items):
+            item.add_marker(skipper)
 
-    for item in items:
-        if "slow" in item.keywords and not run_slow:
-            item.add_marker(skip_slow)
+    if not config.getoption("--hugemem"):
+        skipper = pytest.mark.skip(reason="need --hugemem option to run")
+        for item in filter(lambda it: "hugemem" in it.keywords, items):
+            item.add_marker(skipper)

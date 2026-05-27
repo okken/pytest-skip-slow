@@ -12,7 +12,7 @@ classifiers = [
 ]
 dynamic = ["version", "description"]
 dependencies = ["pytest>=6.2.0"]
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 
 [project.urls]
 Home = "https://github.com/okken/pytest-skip-slow"
